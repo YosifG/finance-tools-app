@@ -4,8 +4,13 @@ An app with a mock implementation of two tools for SMBs- an invoice and payment 
 Run using **docker-compose up --build**.
 
 Technologies used:
+
 Flask
+
 SQLAlchemy + SQLite
+
 Lambda
+
 SNS
+
 Pytest
