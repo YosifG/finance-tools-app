@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Invoice{% endblock %}
+
+{% block content %}
+
+<h1>Invoice {{ invoice.id }}:</h1>
+<div class="invoice-items-group">
+    <div>
+        <b>Issue date:</b> {{invoice.issue_date}}
+    </div>
+    <div>
+        <b>Due date:</b> {{invoice.due_date}}
+    </div>
+</div>
+
+<div class="invoice-items-group">
+    <div>
+        <b>For:</b> {{invoice.for_company}}
+    </div>
+    <div>
+        <b>From:</b> {{invoice.from_company}}
+    </div>
+</div>
+
+<div class="invoice-items-group">
+    <div>
+        <b>Item name:</b> {{invoice.item_name}}
+    </div>
+    <div>
+        <b>Item amount:</b> {{invoice.item_amount}}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+services:
+  payment_links:
+    build:
+      context: ./payment_links_service
+    ports:
+      - "5001:5000"  # Maps container port 5000 to host port 5001
+    environment:
+      - FLASK_ENV=development
+
+  invoices:
+    build:
+      context: ./invoices_service
+    ports:
+      - "5002:5000"  # Maps container port 5000 to host port 5002
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:5000"  # Maps container port 5000 to host port 3000
+    environment:
+      - FLASK_ENV=development

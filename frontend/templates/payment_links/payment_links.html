@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Create payment link{% endblock %}
+
+{% block content %}
+
+<h1>Create a payment link:</h1>
+<form method="POST" action="/payment-links">
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input id="amount" name="amount" placeholder="Payment Amount">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Client email</label>
+        <input id="email" name="email" type="email" placeholder="Customer Email"> 
+    </div>
+
+    <div class="form-group">
+        <button type="submit">Create Payment Link</button>
+    </div>
+
+
+</form>
+{{error}}
+
+{% endblock %}

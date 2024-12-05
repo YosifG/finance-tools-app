@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Payment link{% endblock %}
+
+{% block content %}
+
+<h1>Payment link {{ payment_link.id }} :</h1>
+
+<div class="payment-link-item">
+    <b>Amount:</b> {{ payment_link.amount }}
+</div>
+
+<div class="payment-link-item">
+    <b>Client email:</b> {{payment_link.email}}
+</div>
+
+<div class="payment-link-item">
+    <b>Status:</b> {{ payment_link.status }}
+</div>
+
+<form method="POST" action="/payment-links/{{ payment_link.id }}/pay"> 
+    <button type="submit">Pay {{ payment_link.amount }}</button>
+</form>
+
+{% endblock %}

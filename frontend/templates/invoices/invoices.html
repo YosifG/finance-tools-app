@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Create invoice{% endblock %}
+
+{% block content %}
+
+<h1>Create an invoice:</h1>
+<form method="POST" action="/invoices">
+    <div class="form-group">
+        <label for="issue_date">Issue date</label>
+        <input type="date" id="issue_date" name="issue_date" placeholder="Issue date">
+
+        <label for="due_date">Due date</label>
+        <input type="date" id="due_date" name="due_date" placeholder="Due date">
+    </div>
+
+    <div class="form-group">
+        <label for="from_company">Sending company</label>
+        <input id="from_company" name="from_company" placeholder="From (name)" value="ACME Corp">
+
+        <label for="for_company">Receiving company</label>
+        <input id="for_company" name="for_company" placeholder="For (name)" value="EMCA Corp">
+    </div>
+
+    <div class="form-group">
+        <label for="item_name">Item name</label>
+        <input id="item_name" name="item_name" placeholder="Item" value="Engineering service">
+
+        <label for="item_amount">Item amount</label>
+        <input id="item_amount" name="item_amount" placeholder="Value" value="1000">
+    </div>
+
+    <div class="form-group">
+        <button type="submit">Create Invoice</button>
+    </div>
+</form>
+{{error}}
+
+{% endblock %}
